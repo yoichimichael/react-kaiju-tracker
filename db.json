@@ -1,0 +1,22 @@
+{
+  "kaijus": [
+    {
+      "id": 1,
+      "name": "Mecha Godzilla",
+      "power": "Lazers",
+      "image": "we'll find one later"
+    },
+    {
+      "id": 2,
+      "name": "Mothra",
+      "power": "Poison Powder",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61Jp8FUo27L._SX466_.jpg"
+    },
+    {
+      "id": 3,
+      "name": "King Kong",
+      "power": "Banana",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71IPfsG7AsL._SX425_.jpg"
+    }
+  ]
+}
