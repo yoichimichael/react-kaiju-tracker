@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react'
 // Components
 import KaijuCard from './KaijuCard'
 import CreateKaijuForm from './CreateKaijuForm'
+import TickerContainer from './TickerContainer'
 //Fetch Requests
 import * as requests from './requests'
 
@@ -56,7 +57,9 @@ const KaijuContainer = () => {
 
         {renderKaijuCards()}
 
-        </div>
+      </div>
+
+      <TickerContainer {...{kaijus}} />
     </>
   )
 }

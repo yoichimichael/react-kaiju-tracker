@@ -1,3 +1,12 @@
+body {
+  background-image: url('https://cdna.artstation.com/p/assets/images/images/009/073/052/large/mw-van-der-walt-kaiju-title.jpg?1516968942');
+  /* background-image: url('https://images-na.ssl-images-amazon.com/images/I/51QTv0kDDtL._SX425_.jpg'); */
+  /* background-image: url('https://cdn.dribbble.com/users/1057075/screenshots/2547802/hokusaigojira.jpg'); */
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 .App {
   text-align: center;
 }
@@ -8,6 +17,21 @@
   width: 80%;
   margin: 10%;
   padding: none;
+}
+
+#create-kaiju-form {
+  background: white;
+  color: red;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 10em 1fr;
+  grid-column-gap: 1em;
+}
+
+#create-kaiju-form input[type="text"] {
+  background: red;
+  color: white;
+  height: 1.5em;
 }
 
 .kaiju-card {
@@ -68,4 +92,30 @@ button {
   background: #000a;
   border: solid black 2px;
   cursor: pointer;
+}
+
+#ticker-container {
+  position: fixed;
+  bottom: 0;
+  height: 2em;
+  background: #000a;
+}
+
+#ticker-container div {
+  animation: scroll-left 30s infinite linear;
+  padding-left: 100vw;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+#ticker-container span {
+  color: red;
+  padding-right: 4em;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.5em;
+}
+
+@keyframes scroll-left {
+  from {transform: translate3d(0, 0, 0);}
+  to {transform: translate3d(-100%, 0, 0);}
 }

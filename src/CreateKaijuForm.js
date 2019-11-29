@@ -15,28 +15,20 @@ const CreateKaijuForm = ({createKaiju}) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-
-      <hr/>
-
-      <label>List a new kaiju...</label>
-      <br/>
+    <form id='create-kaiju-form' onSubmit={handleSubmit}>
 
       <label>Name: </label>
       <input type='text' value={name} onChange={e => setName(e.target.value)} />
-      <br/>
 
       <label>Power: </label>
       <input type='text' value={power} onChange={e => setPower(e.target.value)} />
-      <br/>
 
       <label>Image: </label>
       <input type='text' value={image} onChange={e => setImage(e.target.value)} />
+
       <br/>
 
       <input type='submit' value='Create Kaiju' />
-
-      <hr/>
 
     </form>
   )
