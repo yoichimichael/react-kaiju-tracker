@@ -1,6 +1,9 @@
 // React
-import React from 'react';
-import {fetchKaiju} from 'requests'
+import React from 'react'
+// Fetch requests
+// import * as requests from './requests'
+// Components
+import KaijuContainer from './KaijuContainer'
 // Styling
 import './App.css';
 
@@ -10,7 +13,7 @@ function App() {
 
     <h1>Kaiju Tracker</h1>
 
-
+    <KaijuContainer />
 
     </div>
   );

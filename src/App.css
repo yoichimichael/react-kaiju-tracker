@@ -2,21 +2,70 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+#kaiju-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80%;
+  margin: 10%;
+  padding: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.kaiju-card {
+  width: 90%;
+  margin: 5%;
+  border: solid black 2px;
+  position: relative;
+  height: 30em;
+  overflow: hidden;
+  background: white;
+}
+
+.kaiju-card-image {
+  max-width: 100%;
+}
+
+.kaiju-card-name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+.kaiju-card-power {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+}
+
+.kaiju-card-edit-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: solid black 2px;
+  border-width: 2px 2px 0 0;
+}
+
+.kaiju-card-edit-form {
+  position: absolute;
+  top: 3em;
+  left: 5%;
+  width: 85%;
+  background: #000a;
+  padding: 1em;
   color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+.kaiju-card-delete-button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-width: 2px 0 0 2px;
+}
+
+button {
+  color: white;
+  background: #000a;
+  border: solid black 2px;
+  cursor: pointer;
 }
