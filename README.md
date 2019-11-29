@@ -83,9 +83,9 @@ An example sighting:
 
 Now that the tickers have been added, create a form that allows users to report a sighting. This form should use a drop down to choose from all the Kaiju. The time should get passed in automatically along with the form. Look up the documentation for `new Date()` if you're having trouble with getting and manipulating the time.
 
-**BONUS: Only add Kaiju sightings that occurred today to the ticker.**
+**BONUS: Only add the most recent 3 Kaiju sightings the ticker.**
 
-**BONUS: Kaiju sightings are ordered by most recent sighting first.**
+**BONUS: Kaiju sightings in the last hour have a warning indicator: ⚠️.**
 
 **Hints:**
 

@@ -1,5 +1,10 @@
+* {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
 body {
   background-image: url('https://cdna.artstation.com/p/assets/images/images/009/073/052/large/mw-van-der-walt-kaiju-title.jpg?1516968942');
+  /* background-image: url('https://www.hdwallpaper.nu/wp-content/uploads/2018/04/godzilla_2014-18.jpg'); */
   /* background-image: url('https://images-na.ssl-images-amazon.com/images/I/51QTv0kDDtL._SX425_.jpg'); */
   /* background-image: url('https://cdn.dribbble.com/users/1057075/screenshots/2547802/hokusaigojira.jpg'); */
   background-position: center;
@@ -98,7 +103,8 @@ button {
   position: fixed;
   bottom: 0;
   height: 2em;
-  background: #000a;
+  background: #fff;
+  border-top: solid red 1px;
 }
 
 #ticker-container div {
