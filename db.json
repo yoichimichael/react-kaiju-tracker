@@ -28,9 +28,10 @@
   "sightings": [
     {
       "id": 1,
-      "kaiju-id": 1,
+      "kaijuId": 1,
       "location": "Tokyo",
-      "description": "Oh no! There goes Tokyo!"
+      "description": "Oh no! There goes Tokyo!",
+      "time": "Fri Nov 29 2019 11:17:54 GMT-0500 (Eastern Standard Time)"
     }
   ]
 }

@@ -1,68 +1,94 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Kaiju Tracker
+### React Edition
 
-## Available Scripts
+The UN has tasked you with building a website to better help them track Kaiju across the world! Your job is to make an app that allows anyone to look at, add, edit, or delete a Kaiju. In addition, they've given you some code to create a news ticker that shows in realtime what the Kaiju are doing.
 
-In the project directory, you can run:
+## Gettings Started
 
-### `npm start`
+In the terminal, start the app with `npm start`. Additionally, you can begin the local server with `npm run server`.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Fetch Requests
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+The file `requests.js` is where all your fetch requests ought to be stored. There are two endpoints, one for `/kaijus` and one for `/sightings`. Both of these endpoints are included in the file.
 
-### `npm test`
+In order to import your fetches, include this line with the other imports at the top of a react file: `import * as requests from './requests'`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To use any of the requests, call `requests.requestNameHere()`. This will return a promise you can then utilize. As an example:
 
-### `npm run build`
+```
+requests.fetchKaijus()
+.then(response => console.log(response))
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A typical Kaiju object looks like this:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```
+{
+  id: 1, name: "Godzilla",
+  power: "Atomic Breath",
+  image: "https://images-na.ssl-images-amazon.com/images/I/71Q1ckgmeQL._SX425_.jpg"
+}
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A typical sighting object looks like this:
 
-### `npm run eject`
+```
+{
+  id: 1,
+  kaijuId: 1,
+  location: "Tokyo",
+  description: "Oh no! There goes Tokyo!"
+  time: "Fri Nov 29 2019 11:17:54 GMT-0500 (Eastern Standard Time)"
+}
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Kaiju Cards
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Once the Kaiju have been fetched, load them into the Kaiju container element. An example card:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+<div className='kaiju-card'>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  <h2 className='kaiju-card-name'>Kaiju name goes here</h2>
+  <h3 className='kaiju-card-power'>Power: Kaiju power goes here</h3>
 
-## Learn More
+  <img className='kaiju-card-image' src='kaiju image goes here' alt='kaiju name goes here' />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  <button className='kaiju-card-edit-button'>Edit Kaiju</button>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  <button className='kaiju-card-delete-button'>Remove</button>
 
-### Code Splitting
+</div>
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+The edit button, once clicked, should show a form within the Kaiju card with the class of `kaiju-card-edit-form`. This form will update the Kaiju in question. When thinking about how to do this, consider these things: should the Kaiju be updated optimistically or pessimistically? Where does the Kaiju need to be updated? How can this be done without mutating state?
 
-### Analyzing the Bundle Size
+The delete button similarly will remove the Kaiju from the database and the html.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+**BONUS: Render the create form conditionally (user must click a button to see the form).**
 
-### Making a Progressive Web App
+**BONUS: The card also shows how many sightings the Kaiju has. Use the `kaiju-card-num-sightings` class for this.**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## Kaiju Sightings
 
-### Advanced Configuration
+There's already a provided Kaiju Sightings component that displays every Kaiju sighting as a scroll across the bottom of the screen. However, before it can provide Kaiju sightings, it first needs to fetch all the sightings.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Once you've fetched all the sightings, add each of those sightings as a `<span>` to the main ticker `<div>`.
 
-### Deployment
+An example sighting:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+```
+<span>Godzilla seen in Tokyo! Oh no there goes Tokyo!</span>
+```
 
-### `npm run build` fails to minify
+Now that the tickers have been added, create a form that allows users to report a sighting. This form should use a drop down to choose from all the Kaiju. The time should get passed in automatically along with the form. Look up the documentation for `new Date()` if you're having trouble with getting and manipulating the time.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+**BONUS: Only add Kaiju sightings that occurred today to the ticker.**
+
+**BONUS: Kaiju sightings are ordered by most recent sighting first.**
+
+**Hints:**
+
+***What order should the fetches happen? Is one table dependent on the other?***
+
+***Which things need state in order to work? Where should those states live?***
