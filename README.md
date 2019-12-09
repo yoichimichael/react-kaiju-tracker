@@ -1,4 +1,5 @@
-#Kaiju Tracker
+# Kaiju Tracker
+
 ### React Edition
 
 The UN has tasked you with building a website to better help them track Kaiju across the world! Your job is to make an app that allows anyone to look at, add, edit, or delete a Kaiju. In addition, they've given you some code to create a news ticker that shows in realtime what the Kaiju are doing.
