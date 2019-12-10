@@ -3,8 +3,8 @@
 }
 
 body {
-  background-image: url('https://cdna.artstation.com/p/assets/images/images/009/073/052/large/mw-van-der-walt-kaiju-title.jpg?1516968942');
-  /* background-image: url('https://www.hdwallpaper.nu/wp-content/uploads/2018/04/godzilla_2014-18.jpg'); */
+  /* background-image: url('https://cdna.artstation.com/p/assets/images/images/009/073/052/large/mw-van-der-walt-kaiju-title.jpg?1516968942'); */
+  background-image: url('https://www.hdwallpaper.nu/wp-content/uploads/2018/04/godzilla_2014-18.jpg');
   /* background-image: url('https://images-na.ssl-images-amazon.com/images/I/51QTv0kDDtL._SX425_.jpg'); */
   /* background-image: url('https://cdn.dribbble.com/users/1057075/screenshots/2547802/hokusaigojira.jpg'); */
   background-position: center;
@@ -16,6 +16,15 @@ body {
   text-align: center;
 }
 
+#title {
+  color: red;
+  position: fixed;
+  /* left: -5em; */
+  top: 5em;
+  right: -5em;
+  transform: rotate(90deg)
+}
+
 #kaiju-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -25,18 +34,15 @@ body {
 }
 
 #create-kaiju-form {
-  background: white;
   color: red;
   padding: 1em;
-  display: grid;
-  grid-template-columns: 10em 1fr;
-  grid-column-gap: 1em;
 }
 
 #create-kaiju-form input[type="text"] {
   background: red;
   color: white;
   height: 1.5em;
+  margin: 1em;
 }
 
 .kaiju-card {
@@ -47,6 +53,8 @@ body {
   height: 30em;
   overflow: hidden;
   background: white;
+  color: red;
+  box-shadow: 5px 5px;
 }
 
 .kaiju-card-image {
