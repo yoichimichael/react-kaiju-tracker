@@ -20,7 +20,7 @@ body {
   color: red;
   position: fixed;
   /* left: -5em; */
-  top: 5em;
+  top: 5.5em;
   right: -5em;
   transform: rotate(90deg)
 }
@@ -132,4 +132,9 @@ button {
 @keyframes scroll-left {
   from {transform: translate3d(0, 0, 0);}
   to {transform: translate3d(-100%, 0, 0);}
+}
+
+@keyframes warning-flash {
+  from {color: red}
+  to {color: orange}
 }
