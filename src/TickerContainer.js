@@ -1,25 +1,19 @@
+// React
 import React from 'react'
+// Randomizer
+import random from './random'
 
 const TickerContainer = ({kaijus}) => {
 
-  const sightings = [
-    {
-      "id": 1,
-      "kaijuId": 1,
-      "location": "Tokyo",
-      "description": "Oh no! There goes Tokyo!",
-      "time": "Fri Nov 29 2019 11:17:54 GMT-0500 (Eastern Standard Time)"
-    }
-  ]
 
   const renderSightings = () => {
-    return sightings.map(sighting => {
-      const kaiju = kaijus.find(k => k.id === sighting.kaijuId)
-      if (kaiju) {
-        return <span>{kaiju.name} seen in {sighting.location}! {sighting.description} {sighting.time}</span>
-      }
-      return <span>Loading...</span>
-    })
+    if (kaijus.length) {
+      return kaijus.map(kaiju => {
+        return <span>{kaiju.name} seen in {random.city()}! {random.description}</span>
+      })
+    } else {
+      return <span>No kaiju sighted ... Stay alert for more announcements ...</span>
+    }
   }
 
   return (
