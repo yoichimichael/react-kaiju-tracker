@@ -1,48 +1,32 @@
-// React
-import React, {useState} from 'react'
+import React from 'react'
 
-const EditKaijuForm = ({kaiju, editKaiju, deleteKaiju}) => {
+class EditKaijuForm extends React.Component {
 
-  const [nameInput, setNameInput] = useState(kaiju.name)
-  const [powerInput, setPowerInput] = useState(kaiju.power)
-  const [imageInput, setImageInput] = useState(kaiju.image)
+  render() {
+    return (
+      <>
+        <form className='kaiju-card-edit-form'>
 
-  const handleNameInput = e => setNameInput(e.target.value)
-  const handlePowerInput = e => setPowerInput(e.target.value)
-  const handleImageInput = e => setImageInput(e.target.value)
+          <label>Name: </label>
+          <input type='text' />
+          <br/>
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    editKaiju({id: kaiju.id, name: nameInput, power: powerInput, image: imageInput})
+          <label>Power: </label>
+          <input type='text' />
+          <br/>
+
+          <label>Image URL: </label>
+          <input type='text' />
+          <br/>
+
+          <input type="submit" value="Save Changes" />
+
+        </form>
+
+        <button className='kaiju-card-delete-button'>Delete</button>
+      </>
+    )
   }
-
-  const handleDelete = e => {
-    deleteKaiju(kaiju.id)
-  }
-
-  return (
-    <>
-      <form onSubmit={handleSubmit} className='kaiju-card-edit-form'>
-
-        <label>Name: </label>
-        <input type='text' value={nameInput} onChange={handleNameInput} />
-        <br/>
-
-        <label>Power: </label>
-        <input type='text' value={powerInput} onChange={handlePowerInput} />
-        <br/>
-
-        <label>Image URL: </label>
-        <input type='text' value={imageInput} onChange={handleImageInput} />
-        <br/>
-
-        <input type="submit" value="Save Changes" />
-
-      </form>
-
-      <button className='kaiju-card-delete-button' onClick={handleDelete}>Delete</button>
-    </>
-  )
 }
 
 export default EditKaijuForm
