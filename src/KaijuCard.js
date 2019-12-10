@@ -1,39 +1,26 @@
 // React
-import React, {useState} from 'react'
+import React from 'react'
 // Components
 import EditKaijuForm from './EditKaijuForm'
 
-const KaijuCard = ({kaiju, editKaiju, deleteKaiju}) => {
+class KaijuCard extends React.Component {
 
-  // Edit form open state
-  const [editOpen, setEditOpen] = useState(false)
-  const toggleEditOpen = () => setEditOpen(!editOpen)
-
-  const renderEdit = () => {
-    if (!editOpen) {
-      return <button className='kaiju-card-edit-button' onClick={toggleEditOpen}>Edit</button>
-    }
-
+  // How can we show the edit form conditionally?
+  render() {
     return (
-      <>
-        <EditKaijuForm {...{kaiju, editKaiju, deleteKaiju}} />
-        <button className='kaiju-card-edit-button' onClick={toggleEditOpen}>Nevermind</button>
-      </>
+      <div className='kaiju-card'>
+
+        <h2 className='kaiju-card-name'>{/* Kaiju name goes here */}</h2>
+        <h3 className='kaiju-card-power'>Power: {/* Kaiju power goes here */}</h3>
+
+        <img className='kaiju-card-image' src={/* Kaiju image goes here */} alt={/* Can use kaiju name again here :P */} />
+
+        {/* What should this edit button do? */}
+        <button className='kaiju-card-edit-button'>Edit</button>
+
+      </div>
     )
   }
-
-  return (
-    <div className='kaiju-card'>
-
-      <h2 className='kaiju-card-name'>{kaiju.name}</h2>
-      <h3 className='kaiju-card-power'>Power: {kaiju.power}</h3>
-
-      <img className='kaiju-card-image' src={kaiju.image} alt={kaiju.name} />
-
-      {renderEdit()}
-
-    </div>
-  )
 }
 
 export default KaijuCard
