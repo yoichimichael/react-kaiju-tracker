@@ -23,7 +23,7 @@ class KaijuContainer extends React.Component {
           {/* Kaiju cards should go in here! */}
         </div>
 
-
+        {/* Just pass kaijus to this and it'll create a news ticker at the bottom */}
         <TickerContainer kaijus={this.state.kaijus} />
 
       </>
