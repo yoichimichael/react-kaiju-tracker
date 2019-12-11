@@ -6,22 +6,24 @@ The UN has tasked you with building a website to better help them track Kaiju ac
 
 ## Gettings Started
 
-In the terminal, start the app with `npm start`. Additionally, begin the local json server with `npm run server`.
+In the terminal, start the app with `npm start`. Additionally, in a separate terminal you'll need to begin the local json server with `npm run server`.
+
+`npm run server` *is a custom script. If you have questions about what it's doing or you want to build your own, you can check it out in* `package.json`.
 
 ## Fetch Requests
 
-The file `requests.js` is where all your fetch requests ought to be stored. There are two endpoints, one for `/kaijus` and one for `/sightings`. Both of these endpoints are included in the file.
+It's suggested you store all your fetch requests in `requests.js`. The first request has already been built out for you. You don't have to build out all your requests using the variables provided or even using the file provided, however this is one way you can keep your code `DRY`.
 
 In order to import your fetches, include this line with the other imports at the top of a react file: `import * as requests from './requests'`
 
-To use any of the requests, call `requests.requestNameHere()`. This will return a promise you can then utilize. As an example:
+To use any of the requests, call `requests.requestNameHere()`. This will return a promise you can then utilize and chain `.then` methods off of. As an example:
 
 ```
 requests.fetchKaijus()
 .then(response => console.log(response))
 ```
 
-A typical Kaiju object looks like this:
+A typical Kaiju object returned looks like this:
 
 ```
 {
@@ -50,12 +52,20 @@ Once the Kaiju have been fetched, load them into the Kaiju container element. An
 </div>
 ```
 
-The edit button, once clicked, should show a form within the Kaiju card with the class of `kaiju-card-edit-form`. This form will update the Kaiju in question. When thinking about how to do this, consider these things: should the Kaiju be updated optimistically or pessimistically? Where does the Kaiju need to be updated? How can this be done without mutating state?
+## Adding Kaiju
 
-The delete button similarly will remove the Kaiju from the database and the html.
+A form has already been provided for adding new Kaiju. Make sure that this is a `controlled form`. When thinking about how to do this, consider these things: should the Kaiju be added optimistically or pessimistically? Where does the Kaiju need to be updated? How can this be done without mutating state?
 
 **BONUS: Render the create form conditionally (user must click a button to see the form).**
 
+## Editing and Deleting Kaiju
+
+The edit button in the , once clicked, should show a form within the Kaiju card with the class of `kaiju-card-edit-form`. This should be rendered conditionally. When thinking about conditional rendering, can you leverage state in some way to decide whether it should be shown?
+
+Similar to adding a Kaiju, both the front and back end should reflect the edited Kaiju once that Kaiju has been submitted. The same goes for the delete button.
+
 **Hints:**
 
-***Which things need state in order to work? Where should those states live?***
+***Which things need state in order to work?***
+
+***More than one component can have state! Use this to your advantage!***
