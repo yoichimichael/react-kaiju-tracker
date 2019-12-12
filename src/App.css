@@ -35,11 +35,17 @@ body {
   padding: 1em;
 }
 
-#create-kaiju-form input[type="text"] {
-  background: red;
+input[type="text"] {
+  background: #BB002D;
   color: white;
   height: 1.5em;
   margin: 1em;
+}
+
+input::placeholder {
+  background: #AA003E;
+  color: #ddd;
+  opacity: 0.8;
 }
 
 .kaiju-card {

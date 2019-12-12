@@ -29,7 +29,8 @@ A typical Kaiju object returned looks like this:
 
 ```
 {
-  id: 1, name: "Godzilla",
+  id: 1,
+  name: "Godzilla",
   power: "Atomic Breath",
   image: "https://images-na.ssl-images-amazon.com/images/I/71Q1ckgmeQL._SX425_.jpg"
 }
