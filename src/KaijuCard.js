@@ -13,7 +13,7 @@ class KaijuCard extends React.Component {
         <h2 className='kaiju-card-name'>{/* Kaiju name goes here */}</h2>
         <h3 className='kaiju-card-power'>Power: {/* Kaiju power goes here */}</h3>
 
-        <img className='kaiju-card-image' src={null /* Kaiju image goes here */} alt={null /* Can use kaiju name again here :P */} />
+        <img className='kaiju-card-image' src={null /* Kaiju image goes here */} alt={"Maybe something should go here"} />
 
         {/* What should this edit button do? */}
         <button className='kaiju-card-edit-button'>Edit</button>

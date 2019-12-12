@@ -1,5 +1,5 @@
-// headers
-const headers = {'Content-Type': 'application/json', 'Accepts': 'application/json'}
+// headers --> use these at your own discretion
+// const headers = {'Content-Type': 'application/json', 'Accepts': 'application/json'}
 // urls
 const kaijusURL = 'http://localhost:4000/kaijus/'
 const sightingsURL = 'http://localhost:4000/sightings'

@@ -1,11 +1,11 @@
-// React
+// React & Hooks
 import React, {useState, useEffect} from 'react'
 // Requests
 import * as requests from './requests'
 
 const TickerContainer = () => {
 
-  // Oooooooh fancy hooks! Consider this a teaser for later >:)
+  // Oooooooh shiny react hooks! Consider this a teaser for later >:)
   const [sightings, setSightings] = useState([])
   const [kaijus, setKaijus] = useState([])
   useEffect(() => {
