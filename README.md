@@ -72,6 +72,17 @@ Once you have Kaiju working, it's time to list out sightings for them! Each sigh
 
 As with the endpoint for Kaijus, there's also an endpoint listed in `requests` for sightings. Building out requests will work similarly.
 
+A typical sighting will look like this:
+
+```
+{
+  "id": 1,
+  "kaijuId": 1,
+  "location": "Tokyo",
+  "description": "Oh no! There goes Tokyo! Go go Godzilla!"
+}
+```
+
 Create an additional component on each Kaiju card that displays each of the monster's sightings i.e. each sighting's description and location.
 
 ## Adding Sightings

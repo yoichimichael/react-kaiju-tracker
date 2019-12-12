@@ -1,15 +1,37 @@
 // React
-import React from 'react'
-// Randomizer
-import random from './random'
+import React, {useState, useEffect} from 'react'
+// Requests
+import * as requests from './requests'
 
-const TickerContainer = ({kaijus}) => {
+const TickerContainer = () => {
+
+  // Oooooooh fancy hooks! Consider this a teaser for later >:)
+  const [sightings, setSightings] = useState([])
+  const [kaijus, setKaijus] = useState([])
+  useEffect(() => {
+    requests.fetchSightings().then(setSightings)
+    requests.fetchKaijus().then(setKaijus)
+  }, [])
+
+  const findKaiju = (sighting) => kaijus.find(k => k.id === sighting.kaijuId)
 
   const renderSightings = () => {
-    // Create kaiju sightings if kaijus exist
-    if (kaijus.length) {
-      return kaijus.map(kaiju => {
-        return <span style={{animation: '1s warning-flash infinite alternate'}}>⚠️{kaiju.name} seen in {random.city()}! {random.description()}⚠️</span>
+    // Only show sightings if they exist
+    if (kaijus.length && sightings.length) {
+      return sightings.map(sighting => {
+        const kaiju = findKaiju(sighting)
+        // But also only show a sighting if the kaiju exists
+        if (kaiju) {
+          return <span key={sighting.id}
+            style={{animation: '1s warning-flash infinite alternate'}}>
+            &#9888; {kaiju.name} seen in {sighting.location}! {sighting.description} &#9888;
+            </span>
+        } else {
+          return <span key={sighting.id}
+            style={{animation: '1s warning-flash infinite alternate'}}>
+            &#9888; Error Error Error &#9888;
+            </span>
+        }
       })
     // Otherwise create a single announcement about how there are no announcements
     } else {
