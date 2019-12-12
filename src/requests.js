@@ -8,10 +8,22 @@ const parseData = response => response.json()
 // error handler
 const catchError = error => console.log(`%c${error}`, 'color: red;')
 
+//////////////////////////////////////////////////////
+
 // Fetches for kaijus, will return a promise
 // GET /kaijus
-export const getKaijus = () => fetch(kaijusURL)
+export const fetchKaijus = () => fetch(kaijusURL)
 .then(parseData)
 .catch(catchError)
 
 // TODO: define a few more kaiju fetches
+
+//////////////////////////////////////////////////////
+
+// Fetches for sightings, will return a promise
+// GET /sightings
+export const fetchSightings = () => fetch(sightingsURL)
+.then(parseData)
+.catch(catchError)
+
+// TODO: define a few more sighting fetches
