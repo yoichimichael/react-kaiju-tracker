@@ -64,8 +64,30 @@ The edit button in the , once clicked, should show a form within the Kaiju card 
 
 Similar to adding a Kaiju, both the front and back end should reflect the edited Kaiju once that Kaiju has been submitted. The same goes for the delete button.
 
+## Sightings
+
+This next bit is deliberately vague because it's up to you to decide how it'll work and look like!
+
+Once you have Kaiju working, it's time to list out sightings for them! Each sighting is linked to a Kaiju through their id, however because we're not working with a relational database, you'll have to find a Kaiju's sightings and vice versa manually.
+
+As with the endpoint for Kaijus, there's also an endpoint listed in `requests` for sightings. Building out requests will work similarly.
+
+Create an additional component on each Kaiju card that displays each of the monster's sightings i.e. each sighting's description and location.
+
+## Adding Sightings
+
+Once this is working you'll notice there aren't a lot of sightings. So the next step is to add a form that allows us to add more sightings!
+
+You can place this form wherever you want, but we need to make sure each sighting is linked to a specific Kaiju. Keep this in mind when building out the form. As with the above form, this should be a controlled form and update both the database and the Kaiju that sighting belongs to.
+
+**BONUS: Each Kaiju displays the number of sightings attributed to them.**
+
+**BONUS: Sightings conditionally renders on the click of a sightings button or as the back of a card.**
+
 **Hints:**
 
 ***Which things need state in order to work?***
+
+***You can query the json-server with parameters: ex. 'localhost:4000/kaiju?id=1'***
 
 ***More than one component can have state! Use this to your advantage!***
