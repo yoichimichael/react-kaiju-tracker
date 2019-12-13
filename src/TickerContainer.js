@@ -16,7 +16,7 @@ const TickerContainer = ({kaijus}) => {
     return sightings.map(sighting => {
       const kaiju = kaijus.find(k => k.id === sighting.kaijuId)
       if (kaiju) {
-        return <span>{kaiju.name} seen in {sighting.location}! {sighting.description} {sighting.time}</span>
+        return <span>{kaiju.name} seen in {sighting.location}! {sighting.description}</span>
       }
       return <span>Loading...</span>
     })
