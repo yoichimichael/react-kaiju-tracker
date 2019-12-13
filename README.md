@@ -99,7 +99,7 @@ You can place this form wherever you want, but we need to make sure each sightin
 
 ![Delicious!](public/assets/MonsterSightings.png)
 
-Sightings can be added directly to the Kaiju card for that Kaiju's sightings or you can build your own cards, this part is up to you.
+Sightings can be added directly to the Kaiju card or you can build your own cards.
 
 **BONUS: Sightings conditionally renders on the click of a sightings button or as the back of a card.**
 
