@@ -97,9 +97,13 @@ Once this is working you'll notice there aren't a lot of sightings. So the next 
 
 You can place this form wherever you want, but we need to make sure each sighting is linked to a specific Kaiju. Keep this in mind when building out the form. As with the above form, this should be a controlled form and update both the database and the Kaiju that sighting belongs to.
 
-**BONUS: Each Kaiju displays the number of sightings attributed to them.**
+![Delicious!](public/assets/MonsterSightings.png)
+
+Sightings can be added directly to the Kaiju card for that Kaiju's sightings.
 
 **BONUS: Sightings conditionally renders on the click of a sightings button or as the back of a card.**
+
+**BONUS: Each Kaiju displays the number of sightings attributed to them.**
 
 **Hints:**
 

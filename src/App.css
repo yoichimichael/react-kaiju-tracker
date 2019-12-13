@@ -54,7 +54,7 @@ input::placeholder {
   margin: 5%;
   border: solid black 2px;
   position: relative;
-  height: 30em;
+  max-height: 40em;
   overflow: hidden;
   background: white;
   color: red;
