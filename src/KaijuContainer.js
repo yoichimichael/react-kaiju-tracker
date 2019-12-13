@@ -21,11 +21,15 @@ class KaijuContainer extends React.Component {
         <CreateKaijuForm />
 
         <div id='kaiju-container'>
+
           {/* Kaiju cards should go in here! */}
+
         </div>
 
-        {/* Just pass kaijus to this and it'll create a news ticker at the bottom */}
+
+        {/* Just pass kaijus to TickerContainer and it'll create a news ticker at the bottom */}
         <TickerContainer kaijus={this.state.kaijus} />
+        {/* You won't have to modify TickerContainer but it's a fun preview for some other react features */}
 
       </>
     )
