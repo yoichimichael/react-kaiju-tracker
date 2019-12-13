@@ -22,8 +22,6 @@ class EditKaijuForm extends React.Component {
           <input type="submit" value="Save Changes" />
 
         </form>
-
-        <button className='kaiju-card-delete-button'>Delete</button>
       </>
     )
   }
