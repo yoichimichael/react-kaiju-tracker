@@ -35,7 +35,7 @@ A typical Kaiju object returned looks like this:
 }
 ```
 
-## Kaiju Cards
+## √ Kaiju Cards
 
 ![Rawr monsters!](public/assets/MonsterCard.png)
 

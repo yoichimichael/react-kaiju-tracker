@@ -8,10 +8,19 @@ import TickerContainer from './TickerContainer'
 import * as requests from './requests'
 // Read the README for how to fetch
 
+const kaijusPromise = requests.fetchKaijus()
+
 class KaijuContainer extends React.Component {
 
   state = {
     kaijus: []
+  }
+
+  componentDidMount(){
+    kaijusPromise
+      .then(kaijus => { 
+        this.setState({ kaijus })
+      })
   }
 
   render() {
@@ -21,7 +30,7 @@ class KaijuContainer extends React.Component {
         <CreateKaijuForm />
 
         <div id='kaiju-container'>
-
+          {this.state.kaijus.map(kaiju => <KaijuCard  key={kaiju.id} {...kaiju}/>)}
           {/* Kaiju cards should go in here! */}
 
         </div>
