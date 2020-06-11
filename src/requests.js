@@ -1,5 +1,5 @@
 // headers --> use these at your own discretion
-// const headers = {'Content-Type': 'application/json', 'Accepts': 'application/json'}
+const headers = {'Content-Type': 'application/json', 'Accepts': 'application/json'}
 // urls
 const kaijusURL = 'http://localhost:4000/kaijus/'
 const sightingsURL = 'http://localhost:4000/sightings'
@@ -18,6 +18,33 @@ export const fetchKaijus = () => fetch(kaijusURL)
 
 // TODO: define a few more kaiju fetches
 
+export const postKaiju = (kaiju) => ( 
+  fetch(kaijusURL, {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(kaiju)
+  })
+    .then(parseData)
+    .catch(catchError)
+)
+
+export const editKaiju = (kaijuId, kaiju) => ( 
+  fetch(`${kaijusURL}/${kaijuId}`, {
+    method: "PATCH",
+    headers: headers,
+    body: JSON.stringify(kaiju)
+  })
+    .then(parseData)
+    .catch(catchError)
+)
+
+export const deleteKaiju = (kaijuId) => (
+  fetch(`${kaijusURL}/${kaijuId}`, {
+    method: "DELETE",
+    headers: headers,
+  })
+)
+
 //////////////////////////////////////////////////////
 
 // Fetches for sightings, will return a promise
@@ -27,3 +54,13 @@ export const fetchSightings = () => fetch(sightingsURL)
 .catch(catchError)
 
 // TODO: define a few more sighting fetches
+
+export const postSighting = (sighting) => ( 
+  fetch(sightingsURL, {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(sighting)
+  })
+    .then(parseData)
+    .catch(catchError)
+)
